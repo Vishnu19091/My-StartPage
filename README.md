@@ -27,3 +27,17 @@
 			  <br/>	
 		</td>	
 </table>
+
+<br/>
+<div align="left">
+<h3>Key Bindings</h3>
+
+| KEY      | ACTION          |
+|----------|-----------------|
+| g        | GitHub          |
+| t        | TailScale       |
+| y        | YouTube         |
+| m        | GMail           |
+| c        | ChatGPT         |
+
+</div>
