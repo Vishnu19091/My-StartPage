@@ -16,14 +16,16 @@ document.addEventListener("keydown", (event) => {
 	// Only run if NOT already typing in an input or textarea
 	const activeElement = document.activeElement;
 	const isTyping = activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA";
+	const searchInput = document.getElementById("search");
 
 	if (!isTyping && event.key === "s" && !event.ctrlKey && !event.altKey && !event.metaKey) {
 		event.preventDefault(); // only prevent if not already typing
-		const searchInput = document.getElementById("search");
 		if (searchInput) {
 			searchInput.focus();
 			searchInput.select(); // optional: select existing text
 		}
+	} else if (event.key === "Escape") {
+		searchInput.blur();
 	}
 });
 
