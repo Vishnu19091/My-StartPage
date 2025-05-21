@@ -1,10 +1,14 @@
 const searchBox = document.getElementById("search");
 
 searchBox.addEventListener("keydown", (e) => {
-	if (e.code == "Enter") {
+	if (e.code === "Enter") {
 		const { value } = searchBox;
-		if (value.replace(/ /gm, "").length > 0) location.href = `https://google.com/?q=${value}`;
-		else searchBox.value = "";
+		if (value.trim().length > 0) {
+			const query = encodeURIComponent(value.trim());
+			location.href = `https://www.google.com/search?q=${query}`;
+		} else {
+			searchBox.value = "";
+		}
 	}
 });
 
