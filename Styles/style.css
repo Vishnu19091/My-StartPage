@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nova+Square&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+	background: var(--color-bg);
+	font-family: "Kanit", sans-serif;
+	font-style: normal;
+	font-weight: light;
+	font-size: 1.3rem;
+}
+
+#container {
+	height: 100vh;
+	min-height: 100vh;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 30px);
+}
+
+@media only screen and (max-width: 600px) {
+	#container #main .links * {
+		display: none;
+	}
+}
+
+#container #main .links {
+	text-align: center;
+	width: 50vw;
+	max-width: 280px;
+}
+
+#container #main .links .border {
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--color-border);
+	border-top: 1px solid var(--color-border);
+}
+
+#container #main .links .border a {
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 30px;
+	color: var(--color-fg-1);
+}
+
+#container #main .links .border i {
+	color: var(--color-fg-1);
+	transition: color 0.2s ease-in-out;
+}
+
+#container #main .links .border i:hover {
+	color: var(--color-fg-1-hover);
+}
+
+#container #main .searchbar {
+	padding-bottom: 20px;
+}
+
+#container #main .searchbar input {
+	height: 30px;
+	width: 50vw;
+	max-width: 280px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-radius: 0;
+	border: none;
+	text-align: center;
+	color: var(--color-fg-1);
+	background: var(--color-bg);
+	border-bottom: 1px solid var(--color-border);
+	border-top: 1px solid var(--color-border);
+	transition: border-color 0.4s ease-out;
+}
+
+#container #main .searchbar input::placeholder {
+	color: var(--color-fg-2);
+	transition: opacity 0.26s ease-in-out;
+}
+
+#container #main .searchbar input:focus::placeholder {
+	opacity: 0;
+}
+
+#container #main .searchbar input:focus {
+	outline: none;
+	border-bottom: 1px solid var(--color-border-hover);
+	border-top: 1px solid var(--color-border-hover);
+}
+
+footer {
+	text-align: center;
+	color: var(--color-footer);
+	opacity: 50%;
+	transition: opacity 0.2s;
+}
+
+footer i {
+	color: rgb(255, 84, 84);
+}
+
+footer:hover {
+	opacity: 100%;
+}

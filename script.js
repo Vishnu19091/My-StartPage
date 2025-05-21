@@ -1,0 +1,44 @@
+const searchBox = document.getElementById("search");
+
+searchBox.addEventListener("keydown", (e) => {
+	if (e.code == "Enter") {
+		const { value } = searchBox;
+		if (value.replace(/ /gm, "").length > 0) location.href = `https://google.com/?q=${value}`;
+		else searchBox.value = "";
+	}
+});
+
+window.onload = () => {
+	document.getElementsByTagName("body")[0].removeAttribute("class");
+};
+
+document.addEventListener("keydown", (event) => {
+	// Only run if NOT already typing in an input or textarea
+	const activeElement = document.activeElement;
+	const isTyping = activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA";
+
+	if (!isTyping && event.key === "s" && !event.ctrlKey && !event.altKey && !event.metaKey) {
+		event.preventDefault(); // only prevent if not already typing
+		const searchInput = document.getElementById("search");
+		if (searchInput) {
+			searchInput.focus();
+			searchInput.select(); // optional: select existing text
+		}
+	}
+});
+
+document.addEventListener("keydown", function (event) {
+	const isTyping = ["INPUT", "TEXTAREA"].includes(document.activeElement.tagName);
+
+	if (!isTyping && event.key === "g") {
+		window.open("https://github.com/", "_self");
+	} else if (!isTyping && event.key === "t") {
+		window.open("https://login.tailscale.com/admin/machines", "_self");
+	} else if (!isTyping && event.key === "c") {
+		window.open("https://chatgpt.com/", "_self");
+	} else if (!isTyping && event.key === "m") {
+		window.open("https://mail.google.com/mail/u/0/#inbox", "_self");
+	} else if (!isTyping && event.key === "y") {
+		window.open("https://youtube.com/", "_self");
+	}
+});
