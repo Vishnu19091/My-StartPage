@@ -46,5 +46,7 @@ document.addEventListener("keydown", function (event) {
 		window.open("https://mail.google.com/mail/u/0/#inbox", "_self");
 	} else if (!isTyping && event.key === "y") {
 		window.open("https://youtube.com/", "_self");
+	} else if (!isTyping && event.key === "w") {
+		window.open("https://web.whatsapp.com/", "_self");
 	}
 });
