@@ -1,3 +1,11 @@
+function UpdateDate() {
+	let time = new Date();
+	let formatedTime = time.toLocaleTimeString();
+  
+	document.getElementById("time").textContent = formatedTime;
+  }
+  setInterval(UpdateDate, 1000);
+
 const searchBox = document.getElementById("search");
 
 searchBox.addEventListener("keydown", (e) => {
