@@ -1,64 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Startpage</title>
-		<link rel="stylesheet" href="./Styles/color.css" />
-		<link rel="stylesheet" href="./Styles/style.css" />
-		<link rel="stylesheet" href="./Styles/input.css" />
-		<link rel="stylesheet" href="./Styles/output.css" />
-		<!-- <link rel="stylesheet" href="./assets/fontawesome/css/all.css" /> -->
-		<link rel="icon" href="favicon.ico" type="image/x-icon" />
-		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
-	</head>
-	<body class="preload relative">
-		<div id="container">
-			<div id="main">
-				<!-- SEARCH BAR -->
-				<div class="searchbar scale-150">
-					<p id="time" class="text-white text-lg font-semibold"></p>
-					<input id="search" type="text" placeholder="Search" />
-				</div>
 
-				<div class="links">
-					<!-- WEB APPS LINK -->
-					<div class="flex gap-4 scale-150">
-						<a href="https://github.com/"
-							><ion-icon name="logo-github" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"> </ion-icon
-						></a>
-						<a href="https://reddit.com/">
-							<ion-icon name="logo-reddit" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"> </ion-icon>
-						</a>
-						<a href="https://chatgpt.com/">
-							<ion-icon name="hardware-chip-outline" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
-						</a>
-						<a href="https://www.cloudskillsboost.google/">
-							<ion-icon name="cloud-done-outline" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
-						</a>
-						<a href="https://mail.google.com/mail/u/0/#inbox">
-							<ion-icon name="mail-open-outline" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
-						</a>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Startpage</title>
+	<link rel="stylesheet" href="./Styles/input.css">
+	<link rel="stylesheet" href="./Styles/output.css">
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+	<script src="script.js" defer></script>
+</head>
 
-						<a href="https://login.tailscale.com/admin/machines">
-							<ion-icon name="apps-outline" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
-						</a>
-						<a href="https://youtube.com/">
-							<ion-icon name="logo-youtube" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"> </ion-icon>
-						</a>
+<body class="text-[1.3rem] relative">
+	<div class="flex justify-center items-center min-h-screen  bg-black  text-[#bababa]">
+		<p id="time" class="absolute top-4 right-6 text-white text-2xl font-semibold"></p>
+		<div class=" grid grid-rows-auto gap-8">
+			<!-- SEARCH BAR -->
+			<div class="searchbar scale-150">
+				<input id="search" type="text" placeholder="Search"
+					class="h-[30px] w-[30rem] text-center text-[#bababa] bg-[#0d1117] border border-[#2f2f2f] rounded-full focus:outline-none focus:border-[#54e2ff80] placeholder:text-[#4a999d] focus:placeholder-opacity-0 transition" />
+			</div>
 
-						<a href="https://web.whatsapp.com/">
-							<ion-icon name="logo-whatsapp" class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
-						</a>
-					</div>
+			<!-- WEB APPS LINKS -->
+			<div class="text-center w-[30rem]">
+				<div class="flex gap-4 scale-150 flex-wrap justify-center">
+					<a href="https://github.com/">
+						<ion-icon name="logo-github"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://reddit.com/">
+						<ion-icon name="logo-reddit"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://chatgpt.com/">
+						<ion-icon name="hardware-chip-outline"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://www.cloudskillsboost.google/">
+						<ion-icon name="cloud-done-outline"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://mail.google.com/mail/u/0/#inbox">
+						<ion-icon name="mail-open-outline"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://login.tailscale.com/admin/machines">
+						<ion-icon name="apps-outline"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://youtube.com/">
+						<ion-icon name="logo-youtube"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
+					<a href="https://web.whatsapp.com/">
+						<ion-icon name="logo-whatsapp"
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+					</a>
 				</div>
 			</div>
-			<footer class="text-white font-semibold text-base ">
-				Made with <ion-icon name="heart"></ion-icon>, by brainiac kid who sits all the time in front of computer.
-			</footer>
 
+			<div class="absolute left-4 bottom-8">
+				<div class="overflow-hidden rounded-lg border border-white">
+					<table class="table-auto border-collapse text-white">
+						<!-- HEADER -->
+						<thead>
+							<tr class="bg-slate-900">
+								<th class="px-4 py-2 border border-white rounded">Key</th>
+								<th class="px-4 py-2 border border-white rounded">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">c</td>
+								<td class="px-4 py-2 border border-white">chatGPT</td>
+							</tr>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">g</td>
+								<td class="px-4 py-2 border border-white">GitHub</td>
+							</tr>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">m</td>
+								<td class="px-4 py-2 border border-white">Gmail</td>
+							</tr>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">t</td>
+								<td class="px-4 py-2 border border-white">TailScale</td>
+							</tr>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">w</td>
+								<td class="px-4 py-2 border border-white">WhatsApp</td>
+							</tr>
+							<tr class="hover:bg-slate-800">
+								<td class="px-4 py-2 border border-white">y</td>
+								<td class="px-4 py-2 border border-white">YouTube</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				</div>
 		</div>
-		<script src="script.js"></script>
-	</body>
+		<footer
+		class=" absolute bottom-0 text-[#7e7e7e] font-semibold text-base text-center mx-auto opacity-50 hover:opacity-100 transition">
+		Made with <ion-icon name="heart" class="text-red-500 text-xl"></ion-icon>, by brainiac kid who sits whole day in front of computer.
+		</footer>
+	</div>
+</body>
+
 </html>

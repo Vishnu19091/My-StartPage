@@ -4,7 +4,7 @@ function UpdateDate() {
   
 	document.getElementById("time").textContent = formatedTime;
   }
-  setInterval(UpdateDate, 1000);
+  setInterval(UpdateDate, 100);
 
 const searchBox = document.getElementById("search");
 
