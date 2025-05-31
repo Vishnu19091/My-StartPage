@@ -14,7 +14,7 @@
 
 <body class="text-[1.3rem] relative">
 	<div class="flex justify-center items-center min-h-screen  bg-black  text-[#bababa]">
-		<p id="time" class="absolute top-4 right-6 text-white text-2xl font-semibold"></p>
+		<p id="time" class="absolute top-4 right-6 text-[#b1edff] opacity-50 text-2xl font-semibold hover:opacity-100"></p>
 		<div class=" grid grid-rows-auto gap-8">
 			<!-- SEARCH BAR -->
 			<div class="searchbar scale-150">
@@ -27,73 +27,77 @@
 				<div class="flex gap-4 scale-150 flex-wrap justify-center">
 					<a href="https://github.com/">
 						<ion-icon name="logo-github"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://reddit.com/">
 						<ion-icon name="logo-reddit"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://chatgpt.com/">
 						<ion-icon name="hardware-chip-outline"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://www.cloudskillsboost.google/">
 						<ion-icon name="cloud-done-outline"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://mail.google.com/mail/u/0/#inbox">
 						<ion-icon name="mail-open-outline"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://login.tailscale.com/admin/machines">
 						<ion-icon name="apps-outline"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://youtube.com/">
 						<ion-icon name="logo-youtube"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
 					</a>
 					<a href="https://web.whatsapp.com/">
 						<ion-icon name="logo-whatsapp"
-							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 transition-all"></ion-icon>
+							class="text-[#b1edff] text-2xl hover:text-white hover:scale-125 opacity-65 hover:opacity-100 transition-all"></ion-icon>
+					</a>
+					<a href="https://huggingface.co/">
+						<img src="./assets/huggingface_logo-noborder.svg" height="25px" width="25px" class="opacity-65 hover:opacity-100 hover:scale-125 transition-all">
 					</a>
 				</div>
 			</div>
 
+			<!-- KEY BINDINGS -->
 			<div class="absolute left-4 bottom-8">
-				<div class="overflow-hidden rounded-lg border border-white">
-					<table class="table-auto border-collapse text-white">
+				<div class="overflow-hidden rounded-lg border border-gray-700">
+					<table class="table-auto border-collapse text-cyan-700">
 						<!-- HEADER -->
 						<thead>
 							<tr class="bg-slate-900">
-								<th class="px-4 py-2 border border-white rounded">Key</th>
-								<th class="px-4 py-2 border border-white rounded">Action</th>
+								<th class="px-4 py-2 border border-gray-700 rounded">Key</th>
+								<th class="px-4 py-2 border border-gray-700 rounded">Action</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">c</td>
-								<td class="px-4 py-2 border border-white">chatGPT</td>
+								<td class="px-4 py-2 border border-gray-700">c</td>
+								<td class="px-4 py-2 border border-gray-700">chatGPT</td>
 							</tr>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">g</td>
-								<td class="px-4 py-2 border border-white">GitHub</td>
+								<td class="px-4 py-2 border border-gray-700">g</td>
+								<td class="px-4 py-2 border border-gray-700">GitHub</td>
 							</tr>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">m</td>
-								<td class="px-4 py-2 border border-white">Gmail</td>
+								<td class="px-4 py-2 border border-gray-700">m</td>
+								<td class="px-4 py-2 border border-gray-700">Gmail</td>
 							</tr>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">t</td>
-								<td class="px-4 py-2 border border-white">TailScale</td>
+								<td class="px-4 py-2 border border-gray-700">t</td>
+								<td class="px-4 py-2 border border-gray-700">TailScale</td>
 							</tr>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">w</td>
-								<td class="px-4 py-2 border border-white">WhatsApp</td>
+								<td class="px-4 py-2 border border-gray-700">w</td>
+								<td class="px-4 py-2 border border-gray-700">WhatsApp</td>
 							</tr>
 							<tr class="hover:bg-slate-800">
-								<td class="px-4 py-2 border border-white">y</td>
-								<td class="px-4 py-2 border border-white">YouTube</td>
+								<td class="px-4 py-2 border border-gray-700">y</td>
+								<td class="px-4 py-2 border border-gray-700">YouTube</td>
 							</tr>
 						</tbody>
 					</table>

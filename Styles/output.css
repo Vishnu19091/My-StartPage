@@ -665,6 +665,10 @@ video {
   border-width: 1px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
 .border-\[\#2f2f2f\] {
   --tw-border-opacity: 1;
   border-color: rgb(47 47 47 / var(--tw-border-opacity, 1));
@@ -673,6 +677,16 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.border-blue-950 {
+  --tw-border-opacity: 1;
+  border-color: rgb(23 37 84 / var(--tw-border-opacity, 1));
+}
+
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#0d1117\] {
@@ -752,8 +766,83 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-blue-950 {
+  --tw-text-opacity: 1;
+  color: rgb(23 37 84 / var(--tw-text-opacity, 1));
+}
+
+.text-cyan-600 {
+  --tw-text-opacity: 1;
+  color: rgb(8 145 178 / var(--tw-text-opacity, 1));
+}
+
+.text-cyan-800 {
+  --tw-text-opacity: 1;
+  color: rgb(21 94 117 / var(--tw-text-opacity, 1));
+}
+
+.text-cyan-900 {
+  --tw-text-opacity: 1;
+  color: rgb(22 78 99 / var(--tw-text-opacity, 1));
+}
+
+.text-\[white\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[3\] {
+  color: 3;
+}
+
+.text-\[\] {
+  color: ;
+}
+
+.text-\[\#\] {
+  color: #;
+}
+
+.text-\[\#b\] {
+  color: #b;
+}
+
+.text-\[\#b1\] {
+  color: #b1;
+}
+
+.text-\[\#b1e\] {
+  --tw-text-opacity: 1;
+  color: rgb(187 17 238 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#b1ed\] {
+  color: #b1ed;
+}
+
+.text-\[\#b1edf\] {
+  color: #b1edf;
+}
+
+.text-cyan-700 {
+  --tw-text-opacity: 1;
+  color: rgb(14 116 144 / var(--tw-text-opacity, 1));
+}
+
 .opacity-50 {
   opacity: 0.5;
+}
+
+.opacity-65 {
+  opacity: 0.65;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .transition {
@@ -772,6 +861,9 @@ video {
 
 body {
   font-family: "Kanit", sans-serif;
+  font-style: normal;
+  font-weight: light;
+  font-size: 1rem;
   height: 100vh;
 }
 
@@ -811,6 +903,14 @@ body {
 
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.hover\:opacity-90:hover {
+  opacity: 0.9;
+}
+
+.hover\:opacity-10:hover {
+  opacity: 0.1;
 }
 
 .focus\:border-\[\#54e2ff80\]:focus {
