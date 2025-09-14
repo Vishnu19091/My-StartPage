@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChatGPT, Freedium, GitHub, GMail, LeetCode, Reddit, TailScale, WhatsApp, YouTube } from "./svgs";
 import { WAppLinksProp } from "./WAppLinks";
 import { KeyBindsProps } from "./KeyBinds";
 import ShortCuts from "./ShortCuts";
 import Links from "./Links";
+import { useKey } from "../useKey";
 
 // Links
 export const AL: WAppLinksProp[] = [
@@ -30,25 +31,25 @@ export const AL: WAppLinksProp[] = [
 
 // KeyBinds || ShortCuts
 export const shortcuts: KeyBindsProps[] = [
-	{ keyName: "s", link: "Focus Input field" },
+	{ keyName: "S", link: "Focus Input field" },
 
-	{ keyName: "g", link: "GitHub" },
+	{ keyName: "G", link: "GitHub" },
 
-	{ keyName: "m", link: "Gmail" },
+	{ keyName: "M", link: "Gmail" },
 
-	{ keyName: "t", link: "TailScale" },
+	{ keyName: "T", link: "TailScale" },
 
-	{ keyName: "c", link: "ChatGPT" },
+	{ keyName: "C", link: "ChatGPT" },
 
-	{ keyName: "w", link: "WhatsApp" },
+	{ keyName: "W", link: "WhatsApp" },
 
-	{ keyName: "l", link: "LeetCode" },
+	{ keyName: "L", link: "LeetCode" },
 
-	{ keyName: "f", link: "Freedium" },
+	{ keyName: "F", link: "Freedium" },
 
-	{ keyName: "y", link: "YouTube" },
+	{ keyName: "Y", link: "YouTube" },
 
-	{ keyName: "r", link: "Reddit" },
+	{ keyName: "R", link: "Reddit" },
 ];
 
 function Comp() {
@@ -63,6 +64,33 @@ function Comp() {
 		return () => clearInterval(intervalId);
 	}, []);
 
+	const inputEl = useRef<HTMLInputElement>(null);
+
+	useKey("s", "", function () {
+		if (document.activeElement !== inputEl.current) {
+			inputEl.current?.focus();
+		}
+	});
+
+	useKey("Escape", "", function () {
+		// Blur the input only if it's currently focused
+		if (document.activeElement === inputEl.current) {
+			inputEl.current?.blur();
+			console.log("Escape pressed -> input blurred");
+		}
+	});
+
+	// Hooks cannot be called inside callback ;)
+	useKey("g", "https://github.com");
+	useKey("m", "https://mail.google.com/mail/u/0/#inbox");
+	useKey("t", "https://login.tailscale.com/admin/machines");
+	useKey("c", "https://chatgpt.com");
+	useKey("w", "https://web.whatsapp.com");
+	useKey("l", "https://leetcode.com/problemset");
+	useKey("f", "https://freedium.cfd");
+	useKey("y", "https://youtube.com");
+	useKey("r", "https://reddit.com");
+
 	return (
 		<>
 			<div className="flex justify-center items-center min-h-[90vh] w-screen text-[#bababa] relative">
@@ -74,6 +102,7 @@ function Comp() {
 				<div className="grid grid-rows-auto gap-6 w-full max-w-4xl px-4">
 					{/* <-- SEARCH BAR --> */}
 					<input
+						ref={inputEl}
 						id="search"
 						type="text"
 						placeholder="Search"
