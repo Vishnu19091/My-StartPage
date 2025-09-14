@@ -1,6 +1,6 @@
 export interface WAppLinksProp {
 	href: string;
-	svg: any;
+	svg: React.ReactNode;
 }
 
 function WAppLinks({ href, svg }: WAppLinksProp) {

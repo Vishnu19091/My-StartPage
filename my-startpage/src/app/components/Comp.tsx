@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChatGPT, Freedium, GitHub, GMail, HuggingFace, LeetCode, Reddit, TailScale, WhatsApp, YouTube } from "./svgs";
-import WAppLinks, { WAppLinksProp } from "./WAppLinks";
-import KeyBinds, { KeyBindsProps } from "./KeyBinds";
+import { ChatGPT, Freedium, GitHub, GMail, LeetCode, Reddit, TailScale, WhatsApp, YouTube } from "./svgs";
+import { WAppLinksProp } from "./WAppLinks";
+import { KeyBindsProps } from "./KeyBinds";
 import ShortCuts from "./ShortCuts";
 import Links from "./Links";
 

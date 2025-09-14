@@ -1,9 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
 import Comp from "./components/Comp";
 import { useLocalStorageState } from "./useLocalStorage";
 
-export const gifs: string[] = ["/assets/black.eps", "/assets/neon_sunset.gif", "/assets/psychos.gif", "/assets/smoker.gif"];
+const gifs: string[] = ["/assets/black.eps", "/assets/neon_sunset.gif", "/assets/psychos.gif", "/assets/smoker.gif"];
 
 export default function Home() {
 	// <----- works fine ----->
