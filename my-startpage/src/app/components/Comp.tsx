@@ -33,6 +33,8 @@ export const AL: WAppLinksProp[] = [
 export const shortcuts: KeyBindsProps[] = [
 	{ keyName: "S", link: "Focus Input field" },
 
+	{ keyName: "Escape", link: "Unfocus Input field" },
+
 	{ keyName: "G", link: "GitHub" },
 
 	{ keyName: "M", link: "Gmail" },
@@ -66,12 +68,14 @@ function Comp() {
 
 	const inputEl = useRef<HTMLInputElement>(null);
 
+	// <----- Focus Input field ----->
 	useKey("s", "", function () {
 		if (document.activeElement !== inputEl.current) {
 			inputEl.current?.focus();
 		}
 	});
 
+	// <----- Blur the focused input field ----->
 	useKey("Escape", "", function () {
 		// Blur the input only if it's currently focused
 		if (document.activeElement === inputEl.current) {
@@ -91,12 +95,26 @@ function Comp() {
 	useKey("y", "https://youtube.com");
 	useKey("r", "https://reddit.com");
 
+	const [query, setQuery] = useState<string>("");
+
+	// <----- Query the data ----->
+	useKey("Enter", "", function () {
+		if (document.activeElement === inputEl.current) {
+			if (query.trim().length > 0) {
+				const data = encodeURIComponent(query.trim());
+				location.href = `https://www.google.com/search?q=${data}`;
+			}
+		}
+	});
+
 	return (
 		<>
 			<div className="flex justify-center items-center min-h-[90vh] w-screen text-[#bababa] relative">
 				{/* Time in top-right */}
 				<p id="time" className="absolute -top-10 right-6 text-[#b1edff] opacity-50 text-2xl font-semibold hover:opacity-100 transition">
 					{currentTime.toLocaleTimeString()}
+					<br />
+					<span>{currentTime.toLocaleDateString()}</span>
 				</p>
 
 				<div className="grid grid-rows-auto gap-6 w-full max-w-4xl px-4">
@@ -104,6 +122,8 @@ function Comp() {
 					<input
 						ref={inputEl}
 						id="search"
+						value={query}
+						onChange={(e) => setQuery(e.target.value)}
 						type="text"
 						placeholder="Search"
 						className="h-[3rem] w-full text-lg md:text-xl text-center text-[#bababa] 

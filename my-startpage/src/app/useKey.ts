@@ -5,8 +5,10 @@ export function useKey(key: string, href?: string, action?: () => void) {
 		function callback(e: KeyboardEvent) {
 			const target = e.target as HTMLElement;
 
-			// skip if user is typing
-			if (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable) {
+			// block typing in inputs, EXCEPT for Enter/Escape
+			const isFormElement = target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable;
+
+			if (isFormElement && !["Enter", "Escape"].includes(key)) {
 				return;
 			}
 
