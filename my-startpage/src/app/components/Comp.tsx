@@ -52,6 +52,8 @@ export const shortcuts: KeyBindsProps[] = [
 	{ keyName: "Y", link: "YouTube" },
 
 	{ keyName: "R", link: "Reddit" },
+
+	{ keyName: ", | comma", link: "Toggles links icons" },
 ];
 
 function Comp() {
@@ -97,6 +99,12 @@ function Comp() {
 
 	const [query, setQuery] = useState<string>("");
 
+	// Toggle Key Bindings State
+	const [isOpen, setIsOpen] = useState<boolean>(false);
+
+	// Toggle links icon
+	const [showIcons, setShowIcons] = useState<boolean>(false);
+
 	// <----- Query the data ----->
 	useKey("Enter", "", function () {
 		if (document.activeElement === inputEl.current) {
@@ -105,6 +113,16 @@ function Comp() {
 				location.href = `https://www.google.com/search?q=${data}`;
 			}
 		}
+	});
+
+	// Toggle key bindings state
+	useKey("k", "", function () {
+		setIsOpen(!isOpen);
+	});
+
+	// Toggle links icon
+	useKey(",", "", () => {
+		setShowIcons(!showIcons);
 	});
 
 	return (
@@ -134,10 +152,11 @@ function Comp() {
 					/>
 
 					{/* <-- WEB APPS LINKS --> */}
-					<Links />
+					{showIcons && <Links />}
 
 					{/* <-- KEY BINDINGS --> */}
-					<ShortCuts />
+					{!isOpen && <p className="absolute left-4 bottom-4 text-cyan-600 font-extrabold text-md">Press K to toggle Key Bindings</p>}
+					{isOpen && <ShortCuts />}
 				</div>
 			</div>
 		</>

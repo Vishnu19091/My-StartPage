@@ -6,7 +6,7 @@ function ShortCuts() {
 		<>
 			<div className="absolute left-4 bottom-4">
 				<div className="overflow-hidden rounded-lg border border-gray-700">
-					<table className="table-auto border-collapse text-cyan-700 text-sm">
+					<table className="table-auto border-collapse text-white font-bold text-sm">
 						{/* <-- HEADER --> */}
 						<thead>
 							<tr className="bg-slate-900">
