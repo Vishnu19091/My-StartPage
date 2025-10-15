@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatGPT, Freedium, GitHub, GMail, LeetCode, Reddit, TailScale, WhatsApp, YouTube } from "./svgs";
 import { WAppLinksProp } from "./WAppLinks";
-import { KeyBindsProps } from "./KeyBinds";
 import ShortCuts from "./ShortCuts";
 import Links from "./Links";
 import { useKey } from "../useKey";
@@ -27,33 +26,6 @@ export const AL: WAppLinksProp[] = [
 	{ href: "https://youtube.com/", svg: <YouTube className="w-12 h-12" /> },
 
 	{ href: "https://reddit.com/", svg: <Reddit className="w-10 h-10" /> },
-];
-
-// KeyBinds || ShortCuts
-export const shortcuts: KeyBindsProps[] = [
-	{ keyName: "S", link: "Focus Input field" },
-
-	{ keyName: "Escape", link: "Unfocus Input field" },
-
-	{ keyName: "G", link: "GitHub" },
-
-	{ keyName: "M", link: "Gmail" },
-
-	{ keyName: "T", link: "TailScale" },
-
-	{ keyName: "C", link: "ChatGPT" },
-
-	{ keyName: "W", link: "WhatsApp" },
-
-	{ keyName: "L", link: "LeetCode" },
-
-	{ keyName: "F", link: "Freedium" },
-
-	{ keyName: "Y", link: "YouTube" },
-
-	{ keyName: "R", link: "Reddit" },
-
-	{ keyName: ", | comma", link: "Toggles links icons" },
 ];
 
 function Comp() {

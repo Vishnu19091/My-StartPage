@@ -1,4 +1,4 @@
-import { shortcuts } from "./Comp";
+import { shortcuts } from "../data/Keys";
 import KeyBinds from "./KeyBinds";
 
 function ShortCuts() {
