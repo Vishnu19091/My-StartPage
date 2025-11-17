@@ -2,9 +2,9 @@ import { KeyBindsProps } from "@/app/_components/KeyBinds";
 
 // KeyBinds || ShortCuts
 export const shortcuts: KeyBindsProps[] = [
-  { keyName: "S", link: "Focus Input field" },
+  { keyName: "S (default)", link: "Focus Input field" },
 
-  { keyName: "Escape", link: "Unfocus Input field" },
+  { keyName: "Escape (default)", link: "Unfocus Input field" },
 
   { keyName: "G", link: "GitHub" },
 
@@ -24,5 +24,7 @@ export const shortcuts: KeyBindsProps[] = [
 
   { keyName: "R", link: "Reddit" },
 
-  { keyName: ", | comma", link: "Toggles links icons" },
+  { keyName: ", | comma (default)", link: "Toggles links icons" },
+
+  { keyName: "K (default)", link: "Toggles Key Bindings (also used to close)" },
 ];

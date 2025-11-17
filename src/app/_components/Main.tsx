@@ -50,7 +50,7 @@ export const AL: WAppLinksProp[] = [
   { href: "https://reddit.com/", svg: <Reddit className="w-10 h-10" /> },
 ];
 
-function Comp() {
+function Main() {
   // <----- Time ----->
   const [currentTime, setCurrentTime] = useState(new Date());
 
@@ -76,11 +76,17 @@ function Comp() {
     // Blur the input only if it's currently focused
     if (document.activeElement === inputEl.current) {
       inputEl.current?.blur();
-      console.log("Escape pressed -> input blurred");
+      // console.log("Escape pressed -> input blurred");
     }
   });
 
   // Hooks cannot be called inside callback ;)
+  /*
+  This should later change to user custom keys & links
+
+  we need to get the user's custom key&actions from the
+  browser storage
+  */
   useKey("g", "https://github.com");
   useKey("m", "https://mail.google.com/mail/u/0/#inbox");
   useKey("t", "https://login.tailscale.com/admin/machines");
@@ -122,7 +128,7 @@ function Comp() {
   return (
     <>
       <div className="flex justify-center items-center min-h-[90vh] w-screen text-[#bababa] relative">
-        {/* Time in top-right */}
+        {/* Time top-right */}
         <p
           id="time"
           className="absolute -top-10 right-6 text-[#b1edff] opacity-50 text-2xl font-semibold hover:opacity-100 transition"
@@ -164,4 +170,4 @@ function Comp() {
   );
 }
 
-export default Comp;
+export default Main;

@@ -1,5 +1,5 @@
 "use client";
-import Comp from "@/app/_components/Comp";
+import Main from "@/app/_components/Main";
 import { useLocalStorageState } from "@/app/_hooks/useLocalStorage";
 
 const gifs: string[] = [
@@ -40,7 +40,7 @@ export default function Home() {
         </button>
 
         {/* Main Content */}
-        <Comp />
+        <Main />
 
         {/* Footer */}
         <footer className="text-[#7e7e7e] font-semibold text-base opacity-50 hover:opacity-100 transition w-fit mx-auto mb-3">
