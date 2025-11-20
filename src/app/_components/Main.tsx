@@ -17,7 +17,13 @@ import ShortCuts from "./ShortCuts";
 import Links from "./Links";
 import { useKey } from "@/app/_hooks/useKey";
 
-// Links
+/* Icons Links
+-> SVG component and href 
+Can be customized, but the SVG component
+requires to download & import relevant icon
+
+refer -> index.ts to import custom SVG icons as components
+*/
 export const AL: WAppLinksProp[] = [
   { href: "https://github.com/", svg: <GitHub className="w-12 h-12" /> },
 
@@ -54,6 +60,9 @@ function Main() {
   // <----- Time ----->
   const [currentTime, setCurrentTime] = useState(new Date());
 
+  /*
+   This side effect is used to update the time component 
+   */
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentTime(new Date());
@@ -62,9 +71,13 @@ function Main() {
     return () => clearInterval(intervalId);
   }, []);
 
+  /* <----- Focus Input field ----->
+
+  The key 's' & 'Escape' must not affect
+  the custom user keys & links
+  */
   const inputEl = useRef<HTMLInputElement>(null);
 
-  // <----- Focus Input field ----->
   useKey("s", "", function () {
     if (document.activeElement !== inputEl.current) {
       inputEl.current?.focus();
@@ -115,12 +128,12 @@ function Main() {
     }
   });
 
-  // Toggle key bindings state
+  // Toggle KeyBindings visibility state
   useKey("k", "", function () {
     setIsOpen(!isOpen);
   });
 
-  // Toggle links icon
+  // Toggle links icon visibility state
   useKey(",", "", () => {
     setShowIcons(!showIcons);
   });
@@ -128,7 +141,7 @@ function Main() {
   return (
     <>
       <div className="flex justify-center items-center min-h-[90vh] w-screen text-[#bababa] relative">
-        {/* Time top-right */}
+        {/* Date-Time at the top-right of the viewport */}
         <p
           id="time"
           className="absolute -top-10 right-6 text-[#b1edff] opacity-50 text-2xl font-semibold hover:opacity-100 transition"
@@ -154,10 +167,15 @@ function Main() {
                  transition font-semibold shadow-md"
           />
 
-          {/* <-- WEB APPS LINKS --> */}
+          {/* <-- WEB APPS LINKS --> 
+          Displayed only when the state set to visible
+          Key "," given in KeyBindings component
+          */}
           {showIcons && <Links />}
 
-          {/* <-- KEY BINDINGS --> */}
+          {/* <-- KEY BINDINGS COMPONENT --> 
+          With toggling the visibility
+          */}
           {!isOpen && (
             <p className="absolute left-4 bottom-4 text-cyan-600 font-extrabold text-md">
               Press K to toggle Key Bindings
