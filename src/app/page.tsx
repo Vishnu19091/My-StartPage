@@ -10,7 +10,7 @@ const gifs: string[] = [
 ];
 
 export default function Home() {
-  // <----- works fine ----->
+  /* <----- Background GIF Wallpaper -----> */
   const [bgIndex, setBgIndex] = useLocalStorageState<number>(0, "bgwallpaper");
 
   const handleBg = () => {
@@ -24,14 +24,14 @@ export default function Home() {
         className="absolute inset-0 bg-cover bg-center transition-opacity duration-700 ease-in-out"
         style={{
           backgroundImage: `url(${gifs[bgIndex]})`,
-          opacity: 0.4, // dim background only
+          opacity: 0.4, // dim background
           zIndex: -1,
         }}
       />
 
       {/* Foreground content */}
       <div className="relative z-10 flex flex-col items-center justify-between min-h-screen">
-        {/* Change Background Button */}
+        {/* Change Background Wallpaper Button */}
         <button
           onClick={handleBg}
           className="glass-element mt-5 opacity-60 hover:opacity-100 transition-all duration-200"
@@ -44,7 +44,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="text-[#7e7e7e] font-semibold text-base opacity-50 hover:opacity-100 transition w-fit mx-auto mb-3">
-          Made with ❤️, by a nitpicker.
+          💼 Work done by a nitpicker.
         </footer>
       </div>
     </div>
