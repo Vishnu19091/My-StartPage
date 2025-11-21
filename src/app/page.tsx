@@ -2,9 +2,10 @@
 import Main from "@/app/_components/Main";
 import { useLocalStorageState } from "@/app/_hooks/useLocalStorage";
 
+// add gifs path
 const gifs: string[] = [
   "/assets/black.eps",
-  "/assets/neon_sunset.gif",
+  "/assets/rog.gif",
   "/assets/psychos.gif",
   "/assets/smoker.gif",
 ];
@@ -43,7 +44,7 @@ export default function Home() {
         <Main />
 
         {/* Footer */}
-        <footer className="text-[#7e7e7e] font-semibold text-base opacity-50 hover:opacity-100 transition w-fit mx-auto mb-3">
+        <footer className="text-[#bbbbbb7f] font-semibold text-base hover:text-white transition w-fit mx-auto mb-3">
           💼 Work done by a nitpicker.
         </footer>
       </div>
