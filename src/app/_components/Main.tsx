@@ -100,15 +100,16 @@ function Main() {
   we need to get the user's custom key&actions from the
   browser storage
   */
-  useKey("g", "https://github.com");
-  useKey("m", "https://mail.google.com/mail/u/0/#inbox");
-  useKey("t", "https://login.tailscale.com/admin/machines");
+  useKey("a", "https://cloud.appwrite.io/console/");
   useKey("c", "https://chatgpt.com");
-  useKey("w", "https://web.whatsapp.com");
-  useKey("l", "https://leetcode.com/problemset");
   useKey("f", "https://freedium.cfd");
-  useKey("y", "https://youtube.com");
+  useKey("g", "https://github.com");
+  useKey("l", "https://leetcode.com/problemset");
+  useKey("m", "https://mail.google.com/mail/u/0/#inbox");
   useKey("r", "https://reddit.com");
+  useKey("t", "https://login.tailscale.com/admin/machines");
+  useKey("w", "https://web.whatsapp.com");
+  useKey("y", "https://youtube.com");
 
   const [query, setQuery] = useState<string>("");
 
