@@ -6,11 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prod":"next build && next start",
+    "prod": "next build && next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "15.5.3",
+    "next": "15.5.9",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
