@@ -23,6 +23,7 @@ export function useKey(key: string, href?: string, action?: () => void) {
 				}
 
 				if (href) {
+					console.log("Key Pressed: ",key, "Link: ", href);
 					window.open(href, "_self");
 				}
 			}
